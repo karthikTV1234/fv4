@@ -1,0 +1,71 @@
+1. Event Trigger:
+   1. When the screen opens, the UI triggers the LoadEntries event.
+Example:
+create: (context) => EntriesBloc(EntryRepository())..add(LoadEntries()),
+   2. Also, when the user adds a new entry and returns to the list, the event is triggered again:
+Example:
+context.read<EntriesBloc>().add(LoadEntries());
+
+
+Who will receive event?
+
+
+2. BLoC Receives Event:
+   1. EntriesBloc listens for incoming events.
+   2. When LoadEntries event is received, the BLoC handles it.
+Example:
+on<LoadEntries>((event, emit) async {
+
+
+What it will do after listening?
+
+3. State Update:
+   1. Loading State: BLoC emits the EntriesLoading state to show a loading indicator.
+Example:
+emit(EntriesLoading());
+   2. Fetch Entries: BLoC calls the repository to fetch entries from the database.
+Example:
+final entries = await _entryRepository.getAllEntries();
+   3. Loaded State: After fetching entries successfully, BLoC emits the EntriesLoaded state with the fetched entries.
+Example:
+emit(EntriesLoaded(entries));
+   4. Error Handling: If fetching fails, BLoC emits EntriesLoaded state with empty list as fallback and prints an error message.
+Example:
+catch (e) {
+  print('Error loading entries: $e');
+  emit(EntriesLoaded([]));
+}
+ 
+Who will listen for UI changes?
+
+4. UI Rebuild:
+   1. BlocBuilder: Listens to state changes and rebuilds the UI accordingly.
+Example:
+BlocBuilder<EntriesBloc, EntriesState>(
+  builder: (context, state) {
+  2. Loading State UI: When EntriesLoading state is emitted, a progress bar is shown.
+Example:
+if (state is EntriesLoading) {
+  return const Center(child: CircularProgressIndicator());
+}
+  3. Loaded State UI: When EntriesLoaded is emitted.
+     1. If entries are empty.
+     2. If entries are fetched, display the list.
+     3. else case shows, Shows an error message.
+
+
+
+This creates a unidirectional flow:
+User Action → Event → BLoC → State → UI Update.
+User Action → Event (LoadEntries) → BLoC → State (EntriesLoading → EntriesLoaded) → UI Update.
+
+
+BLoC Initialization:
+BlocProvider(
+  create: (context) => EntriesBloc(EntryRepository())..add(LoadEntries()),
+
+What happens here?
+ 1. BlocProvider creates and provides an instance of EntriesBloc to the widget tree.
+ 2. EntryRepository() is injected into EntriesBloc to handle data fetching.
+ 3. ..add(LoadEntries()) triggers the loading of entries as soon as the screen opens.
+

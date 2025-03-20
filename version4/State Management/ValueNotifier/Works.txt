@@ -1,0 +1,8 @@
+How setState() works:
+   setState() rebuilds the entire widget every time you call it.
+   Problem: If your widget is big, everything rebuilds — even the parts that don’t need to change!
+
+
+How ValueNotifier is different:
+   ValueNotifier only updates the widgets that care about the value.
+   only widgets using ValueListenableBuilder will rebuild, not the entire screen.

@@ -1,0 +1,9 @@
+🔹 When to Use FutureBuilder?
+✅ Fetching data from an API (http.get()).
+✅ Reading from local storage (e.g., SharedPreferences.getInstance()).
+✅ Database queries (e.g., sqflite.query()).
+✅ Any one-time async operation that affects UI.
+
+
+When NOT to use it:
+https://medium.com/@wartelski/futurebuilder-in-flutter-when-not-to-use-it-bab3362de637

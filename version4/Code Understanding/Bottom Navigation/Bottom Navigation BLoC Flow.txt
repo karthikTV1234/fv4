@@ -1,0 +1,43 @@
+1. Event Trigger:
+   1. When the user taps on a bottom navigation item. An event is triggered (BottomNavItemSelected), carrying the selected index.
+Example:
+onTap: (index) => context.read<BottomNavBloc>().add(BottomNavItemSelected(index))
+
+
+Who will receive event?
+
+2. BLoC Receives Event:
+   1. BottomNavBloc listens for incoming events.
+   2. When BottomNavItemSelected is received(event is received), the BLoC handles it.
+
+
+What it will do after listening?
+
+3. State Update:
+   1. The BLoC emits a new state (BottomNavInitial) with the updated index.
+   2. This new state represents the currently selected tab.
+
+Who will listen for UI changes?
+
+4. UI Rebuild:
+   1. BlocBuilder is listening to the BLoC’s state.
+   2. When a new state is emitted, the builder function inside BlocBuilder gets triggered.
+   3. The UI is rebuilt to display the screen for the newly selected tab.
+
+
+
+This creates a unidirectional flow:
+User Action → Event → BLoC → State → UI Update.
+
+
+BLoC Initialization:
+ 1. BottomNavBloc is created at the top level using BlocProvider, making it available to the widget tree below.
+Example:
+BlocProvider(
+  create: (_) => BottomNavBloc(),
+  child: BlocBuilder,
+)
+
+
+
+

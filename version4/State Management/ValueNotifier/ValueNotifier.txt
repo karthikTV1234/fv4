@@ -1,0 +1,7 @@
+https://medium.com/@thekavak/flutter-valuenotifier-with-examples-66b3933d7036
+
+What is ValueNotifier?
+1. ValueNotifier is a simple class in Flutter that allows you to store a value and notify any listeners when the value changes. 
+2. It is a lightweight alternative to other state management solutions available in Flutter, such as BLoC or Provider.
+
+Why use it?

@@ -1,0 +1,26 @@
+Why Do We Need Permissions?
+1. Modern mobile apps often require access to sensitive data or device features like location, camera, microphone, or storage. 
+2. To protect user privacy, operating systems enforce a permission system, where apps must explicitly request access, and users must grant or deny it.
+
+
+Types of Permissions
+   1. Normal Permissions (Auto-granted on install)
+       Internet access, network state, Bluetooth, etc.
+   2. Dangerous Permissions (Require user consent at runtime)
+       Camera, Location, Microphone, Contacts, etc.
+
+Do i need to write separate code for permissions for android & ios?
+  1. Flutter has plugins like permission_handler that handle permissions on both platforms with a single codebase.
+  2. If you want to avoid third-party plugins, you’ll need to use Platform Channels to handle permissions separately for Android and iOS
+
+
+Permission Handling Flow(Android):
+1. Declare in Manifest:
+   Add required permissions in AndroidManifest.xml.
+2. Request at Runtime:
+   For dangerous permissions (Android 6.0+), prompt the user at runtime.
+3. Handle User Response:
+   Implement logic for granted, denied, or permanently denied cases.
+4. Provide Rationale (Optional):
+   This step occurs only if the user denies the permission once but hasn’t selected "Don’t ask again."
+   Explain why the permission is needed before requesting it again.

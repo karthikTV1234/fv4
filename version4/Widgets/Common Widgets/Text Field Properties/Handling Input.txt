@@ -1,0 +1,3 @@
+onChanged: Called every time the text changes.
+onSubmitted: Called when the user presses "Done" or "Enter".
+onEditingComplete: Called when the user finishes editing.

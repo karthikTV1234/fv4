@@ -1,0 +1,16 @@
+
+When to use:
+Small State Changes:
+   1. A switch to toggle dark mode.
+   2. Form validation (e.g., checking if an input is valid).
+
+Isolated UI Updates:
+   1. When you want only part of the UI to rebuild — not the entire screen.
+   2. Example: Updating just a Text widget when a counter changes.
+
+Temporary State:
+   1. Perfect for temporary states that don’t need to be shared across multiple screens.
+
+
+When NOT to use ValueNotifier
+1. ❌ Don’t use it for complex apps or when the state needs to be shared across many widgets.

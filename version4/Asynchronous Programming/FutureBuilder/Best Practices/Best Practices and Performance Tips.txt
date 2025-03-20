@@ -1,0 +1,5 @@
+✅ Use FutureBuilder only inside the widget tree to manage UI updates.
+
+
+Mistakes You Might Be Making:
+https://medium.com/@wartelski/futurebuilder-in-flutter-mistakes-you-might-be-making-e97209f66c2f

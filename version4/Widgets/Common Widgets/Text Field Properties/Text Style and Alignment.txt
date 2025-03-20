@@ -1,0 +1,3 @@
+style: Sets the text style.
+textAlign: Aligns the text (left, center, right).
+cursorColor / cursorHeight / cursorWidth: Customizes the cursor.

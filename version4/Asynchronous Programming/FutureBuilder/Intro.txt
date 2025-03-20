@@ -1,0 +1,26 @@
+https://medium.com/stackademic/futurebuilder-vs-streambuilder-flutters-async-powerhouses-243dc09d7393
+https://medium.com/@asterjoules/complete-guide-to-futurebuilder-in-flutter-4c2f5c8d6886
+https://medium.com/@nandhuraj/unveiling-the-power-of-futurebuilder-in-flutter-7db834e5f394
+
+
+What is FutureBuilder?
+Why to Use FutureBuilder?
+1. We use the async to declare a function as an asynchronous function, and its return type is automatically converted to a Future of the return data type.
+
+Why Future Builder
+1. The FutureBuilder widget is designed to handle asynchronous operations and update the UI based on the state of a Future.
+
+How FutureBuilder Works:
+Takes a Future<T> (which represents an asynchronous operation).
+Listens to the Future and waits for its result.
+Rebuilds the UI based on the Future's state (loading, done, or error).
+
+
+FutureBuilder Lifecycle & States
+
+Basic Syntax
+
+
+
+
+Best Practices for FutureBuilder:

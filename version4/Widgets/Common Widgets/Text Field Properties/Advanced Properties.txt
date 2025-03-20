@@ -1,0 +1,3 @@
+autofocus: Focuses the field automatically when the screen opens.
+readOnly: Makes the field non-editable while still allowing selection.
+focusNode: Controls the focus programmatically.

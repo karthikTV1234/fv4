@@ -1,0 +1,45 @@
+Decoration and Appearance:
+1. decoration: Customizes appearance with InputDecoration
+Example:
+decoration: const InputDecoration(
+  border: OutlineInputBorder(),
+),
+ => InputDecoration is used to customize the appearance of a TextField or TextFormField in Flutter.
+ => OutlineInputBorder() 
+    => creates a rectangular border around the TextField with rounded corners.
+    => By default:
+       => Color: Uses the theme's primary color when focused and a light grey when not focused.
+       => Width: 1.0 pixel wide
+
+Example2:
+decoration: const InputDecoration(labelText: "Location")
+=> Without OutlineInputBorder() the text field has an underline by default.
+
+2. labelText:
+  => The labelText is the floating label that shows a description or title for the TextField.
+  => Initially: The label sits inside the field when it's empty and not focused.
+  => When Focused or Filled: The label "floats" above the text field, making space for user input.
+
+3. hintText:
+  => The hintText is placeholder text that gives a hint or example of what the user should enter in the TextField.
+  When labelText and hintText are BOTH present:
+  => Only the labelText ("Location") is visible inside the field.
+  => The hintText is NOT visible at this point.
+  When Focused (Before Typing):
+  => The labelText moves above the text field.
+  => The hintText ("Enter city or town") appears inside the field as placeholder text.
+  When Typing:
+  => The hintText disappears as soon as the user starts typing.
+  => The labelText stays floating above the field.
+
+  When ONLY hintText is present:
+  => The hintText ("Enter city or town") appears inside the field as placeholder text, when focused/not focused.
+  => The hintText disappears immediately as the user starts typing.
+
+
+3. prefixIcon / suffixIcon: Adds icons to the left or right of the text field.
+4. border: Customizes the border.
+Example:
+decoration: const InputDecoration(
+  border: OutlineInputBorder(),
+),

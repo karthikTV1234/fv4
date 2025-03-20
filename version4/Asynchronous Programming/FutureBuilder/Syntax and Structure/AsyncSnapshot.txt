@@ -1,0 +1,23 @@
+The AsyncSnapshot object provides information about the Future's state and data:
+
+1. snapshot.connectionState:
+   Represents the connection status:
+     ConnectionState.none: Future not yet started.
+     ConnectionState.waiting: Future is running (ideal for loading indicators).
+     ConnectionState.active: Future is in progress (usually used with Streams).
+     ConnectionState.done: Future is complete (either success or error).
+
+2. snapshot.hasData:
+     Returns true if the Future completed successfully and has data.
+
+3. snapshot.data:
+     Holds the result of the Future once completed(access data using snapshot.data).
+
+4. snapshot.hasError:
+     Returns true if the Future completed with an error.
+
+5. snapshot.error:
+     Contains the error message if the Future fails(The error details can be accessed using snapshot.error).
+
+
+

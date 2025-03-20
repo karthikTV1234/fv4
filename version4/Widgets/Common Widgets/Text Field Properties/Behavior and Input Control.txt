@@ -1,0 +1,4 @@
+obscureText: Hides text for passwords.
+maxLength: Limits the number of characters.
+maxLines: Controls how many lines the text can take.
+enabled: Enables/disables the field.

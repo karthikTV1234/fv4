@@ -1,0 +1,28 @@
+1.Avoid Calling Future Directly in the build() Method:
+   1. Every time the widget rebuilds, the build() method runs again. If you call the Future directly inside build(), it will trigger the future multiple times unnecessarily.
+ 
+❌ Bad Example:
+ @override
+Widget build(BuildContext context) {
+  return FutureBuilder(
+    future: fetchData(), // ❌ This will re-run on every build!
+    builder: (context, snapshot) {
+}
+
+✅ Solution:
+Call the future once in initState() and store the result in a variable.
+Example:
+late Future<String> _futureData;
+
+@override
+void initState() {
+  super.initState();
+  _futureData = fetchData();  // Future called only once
+}
+
+@override
+Widget build(BuildContext context) {
+  return FutureBuilder<String>(
+    future: _futureData,
+    builder: (context, snapshot) {
+}

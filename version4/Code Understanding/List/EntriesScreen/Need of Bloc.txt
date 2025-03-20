@@ -1,0 +1,8 @@
+using BLoC when fetching items from sqflite is a very good idea
+
+✅ When fetching items from sqflite, BLoC typically does:
+Event: LoadEntries → Triggers fetching data from the database.
+State:
+  EntriesLoading → Shows a loading indicator.
+  EntriesLoaded → Shows the list of items.
+  EntriesError → Shows an error message if something goes wrong.

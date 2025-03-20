@@ -1,0 +1,23 @@
+Scenario:
+Move from Entries List screen to Add Entry Screen.
+After adding new entry, will come back to entries screen and list should be refresh.
+
+Solution:
+Manually trigger refresh with Navigator pop callback:
+Example:
+ onPressed: () async {
+ // Navigate to AddEntry and refresh on return
+ final result = await Navigator.pushNamed(context, AppRoutes.addEntry);
+ if (result == true) {
+   entriesBloc.add(LoadEntries());
+ }
+}
+✅ Pros:
+  1. Keeps EntriesScreen as a StatelessWidget.
+  2. Simpler, no need for lifecycle methods like initState().
+
+In Add Entry Screen:
+1. Just make sure that when you navigate back after adding a new entry, you pass true as the result.
+Example:
+Navigator.pop(context, true);
+

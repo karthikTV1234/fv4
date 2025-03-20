@@ -1,0 +1,18 @@
+class EntriesScreen extends StatelessWidget {
+  const EntriesScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+    create: (context) => EntriesBloc(EntryRepository())..add(LoadEntries()),
+    child: Scaffold()
+   )
+  }
+}
+
+Problem:
+1. Every time coming to EntriesScreen, new EntriesBloc will be created.
+2. When come back to EntriesBloc from AddEntryScreen, previous EntriesBloc not available so list is not refreshing.
+
+Solution:
+1.Global BLoC: Provide EntriesBloc at the app level (app.dart or main.dart) so it persists throughout the app lifecycle.

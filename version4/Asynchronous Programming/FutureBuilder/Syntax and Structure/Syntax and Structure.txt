@@ -1,0 +1,40 @@
+Key Parameters
+1. future
+   1. The asynchronous task that returns a Future<T>.
+   2. Example: fetchData() or Future.delayed() for simulation.
+   3. The future runs only once unless the FutureBuilder itself is rebuilt.
+
+2. builder
+   A function that rebuilds the UI whenever the Future's state changes.
+   Takes two arguments:
+      context: Provides the build context.
+      snapshot: Holds the current state of the Future and its data.
+
+FutureBuilder Syntax:
+FutureBuilder<T>(
+  future: someFutureFunction(),
+  builder: (BuildContext context, AsyncSnapshot<T> snapshot) {
+    // Handle different states here
+  },
+)
+
+FutureBuilder<T>(
+  future: yourFutureFunction(), // The Future you want to await
+  builder: (BuildContext context, AsyncSnapshot<T> snapshot) {
+    if (snapshot.connectionState == ConnectionState.waiting) {
+      return CircularProgressIndicator(); // Show loading indicator
+    } else if (snapshot.hasError) {
+      return Text('Error: ${snapshot.error}'); // Show error message
+    } else if (snapshot.hasData) {
+      return Text('Data: ${snapshot.data}'); // Display fetched data
+    } else {
+      return Text('No data found'); // Handle case when no data is returned
+    }
+  },
+);
+
+Building UI with FutureBuilder
+1. Handling Loading State
+2. Handling Success State
+3. Handling Error State
+4. Handling No Data State
