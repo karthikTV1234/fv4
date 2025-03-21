@@ -1,0 +1,17 @@
+1. Variables → Prevent Reassignment
+Makes the variable immutable (can’t reassign)
+use of final is for variables, to make sure their value is assigned only once and cannot be changed after that.
+
+Java:
+final int MAX_AGE = 100;  // Can't change after assignment
+MAX_AGE = 101;  // ❌ Error
+
+Dart:
+final maxAge = 100;
+maxAge = 101;  // ❌ Error
+
+Kotlin:
+val maxAge = 100  // Immutable (like 'final')
+maxAge = 101  // ❌ Error
+Note: In Kotlin, there is no final keyword directly, but we can use val to achieve immutability.
+Note: In Kotlin, there is no final keyword directly, but we can use val to achieve immutability.

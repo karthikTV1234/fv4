@@ -1,0 +1,6 @@
+Why does the concept exist?
+1. Static is used to define variables, methods, and classes that belong to the class itself, rather than instances of the class.
+2. It helps in:
+    1. Sharing data across all instances of a class.
+    2. Accessing members directly using the class name without creating objects.
+    3. Implementing utility methods and constants.

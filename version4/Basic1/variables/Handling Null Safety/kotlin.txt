@@ -1,0 +1,14 @@
+Kotlin has built-in null safety, similar to Dart.
+
+Non-nullable (default)
+  var name: String = "Alice"
+  // name = null  // ❌ Compile-time error (not allowed)
+
+
+Nullable (? operator)
+
+
+Safe Call (?.) and Elvis (?:) Operators
+
+
+Force Unwrapping (!!) (Use with caution)

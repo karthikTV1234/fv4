@@ -1,0 +1,19 @@
+Types of Type Checking:
+1. Static Type Checking:
+Types are checked at compile time.
+Errors are caught before the code runs.
+Example languages: Java, Kotlin, Dart (by default)
+
+2. Dynamic Type Checking:
+
+Types are checked at runtime.
+Errors appear only when the code runs.
+Example languages: Python, JavaScript, Dart (with dynamic).
+
+
+3. Implicit vs Explicit Typing:
+
+Implicit Typing: The language infers the type automatically.
+Example: Kotlin (with val), Dart (with var)
+Explicit Typing: You must declare the type explicitly.
+Example: Java, Dart (with int, String)

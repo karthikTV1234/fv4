@@ -1,0 +1,27 @@
+Classes → Prevent Inheritance
+
+Marking a class as final prevents inheritance. No other class can extend it.
+
+Java:
+final class Animal {}  // Can't inherit
+
+class Dog extends Animal {}  // ❌ Error: Cannot inherit from final class
+
+Kotlin:
+final class Animal  // Can't inherit (final by default)
+
+class Dog : Animal()  // ❌ Error
+
+Note: Classes, functions, and properties(variables) are final by default(cannot be overridden).
+1. Classes, functions, and properties(variables) are final by default(cannot be overridden).
+2. To allow inheritance/overriding, you must explicitly mark them as open.
+Note: In Kotlin, there is no final keyword directly, but we can use val to achieve immutability.
+
+
+Dart: (No final for classes, use @sealed)
+import 'package:meta/meta.dart';
+
+@sealed
+class Animal {}  // Prevent inheritance
+
+class Dog extends Animal {}  // ❌ Error

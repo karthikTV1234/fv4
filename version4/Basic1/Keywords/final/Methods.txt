@@ -1,0 +1,44 @@
+Methods → Prevent Overriding
+Marking a method as final prevents subclasses from overriding it.
+
+
+Java:
+class Animal {
+    final void sound() {  // Can't override this method
+        System.out.println("Some sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {  // ❌ Error: Cannot override final method
+        System.out.println("Bark");
+    }
+}
+
+
+Kotlin:
+open class Animal {
+    final fun sound() {  // Can't override
+        println("Some sound")
+    }
+}
+
+class Dog : Animal() {
+    // ❌ Error: Cannot override final method
+    // override fun sound() { println("Bark") }
+}
+1. Classes, functions, and properties(variables) are final by default(cannot be overridden).
+2. To allow inheritance/overriding, you must explicitly mark them as open.
+Note: In Kotlin, there is no final keyword directly, but we can use val to achieve immutability.
+
+
+Dart: (No final for methods, use private methods with _ to prevent overriding)
+class Animal {
+  void _sound() {  // Private method, can't override
+    print("Some sound");
+  }
+}
+
+class Dog extends Animal {
+  // Can't override _sound because it's private!
+}

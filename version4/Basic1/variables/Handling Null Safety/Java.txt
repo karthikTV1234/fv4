@@ -1,0 +1,4 @@
+Java has no built-in null safety, so null pointer exceptions (NPEs) are common.
+
+Handling null using if conditions
+Using Optional (Java 8+)

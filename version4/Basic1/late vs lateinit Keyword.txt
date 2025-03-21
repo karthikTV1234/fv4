@@ -1,0 +1,21 @@
+https://medium.com/@ahumza152/understanding-late-keyword-in-dart-4f61e051cb08
+
+
+Kotlin: lateinit Keyword:
+✅ Works only with var (mutable variables)
+✅ If accessed before assigning a value → ❌ Throws UninitializedPropertyAccessException
+
+
+Dart: late Keyword:
+✅ Works with any type (int, String, List, etc.)
+✅ If accessed before assigning a value → ❌ Throws LateInitializationError
+
+
+
+When to Use late/lateinit Variables
+
+
+Best Practices:
+✅ Use late only when immediate initialization is not possible.
+✅ Use late final for expensive calculations that should only happen once.
+✅ Avoid using late everywhere—prefer nullable types (String?) when appropriate.

@@ -1,0 +1,33 @@
+Dart has sound null safety, meaning variables can’t be null unless explicitly allowed.
+
+
+Non-nullable by default:
+ String name = 'Alice';  // Cannot be null
+
+
+Nullable (? operator):
+  String? name;  // Can be null
+  name = "Alice";
+  name = null;  // ✅ Allowed
+
+
+Null-aware operators:
+
+Null checks with ! and ??:
+
+
+
+What will the following code print, and why?
+var x;
+print(x);
+
+Answer: null
+For var, Dart automatically assigns null if no value is given.
+
+void main() {
+  var a;       // ✅ No error, default is null
+  int? b;      // ✅ Nullable, default is null
+  int c;       // ❌ Error! Non-nullable, must be initialized
+}
+
+

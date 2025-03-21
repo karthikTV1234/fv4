@@ -1,0 +1,7 @@
+Do we have the static keyword?
+
+Language  Static Keyword	Explanation
+Java	  ✅ Yes	        Use static for variables, methods, and nested classes.
+Kotlin	  ❌ No	                No direct static keyword. Use companion object or object for similar behavior.
+Dart	  ✅ Yes	        Use static for variables and methods. No static classes.
+Python	  ❌ No	                No direct static keyword. Use class-level variables and @staticmethod decorator for methods.

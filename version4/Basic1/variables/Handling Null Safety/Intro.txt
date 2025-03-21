@@ -1,0 +1,3 @@
+What is Null Safety?
+Null safety ensures that variables cannot hold null values unless explicitly allowed. 
+This helps prevent runtime errors like NullPointerException (NPE),

@@ -1,0 +1,27 @@
+dynamic
+
+1. In Dart, dynamic is a type that disables type checking at compile time. 
+2. When you declare a variable as dynamic, the type of that variable is determined only at runtime.
+
+
+Declaration and Usage:
+void main() {
+  dynamic value = 42;  // Initially an int
+  print(value.runtimeType);  // int
+
+  value = "Hello";  // Now it's a String
+  print(value.runtimeType);  // String
+}
+
+When to Avoid dynamic:
+1. Overusing dynamic makes code harder to maintain and debug.
+
+
+dynamic vs var vs Object:
+dynamic a = 10;  // Can become anything
+a = "Now a String";  // ✅ No problem
+
+var b = 10;  // Inferred as int
+b = "String";  // ❌ Error: Can't change type once inferred
+
+Object c = 10;  // Holds any type but can't access type-specific members without casting

@@ -1,0 +1,1 @@
+In Python, everything can be None (the equivalent of null). There’s no strict null safety.
